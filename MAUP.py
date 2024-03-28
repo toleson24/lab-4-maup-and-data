@@ -28,12 +28,12 @@ initial_partition = init_partition(la_graph)
 print("Initial partition initialized")
 ideal_pop = calc_population(la_graph, 6, "TOTPOP")
 print("Ideal population: ", ideal_pop)
-rand_walk = init_markov_chain(la_graph, initial_partition, "TOTPOP", ideal_pop, 3)  # 2000
+rand_walk = init_markov_chain(la_graph, initial_partition, "TOTPOP", ideal_pop, 100)  # 2000
 print("Markov Chain initialized")
 cutedge_ensemble = []
 lmaj_ensemble = []
 dem_win_ensemble = []
-cutedge_ensemble, lmaj_ensemble, dem_win_ensemble = walk_the_run(rand_walk, 6, cutedge_ensemble, lmaj_ensemble, dem_win_ensemble)
+cutedge_ensemble, lmaj_ensemble, dem_win_ensemble = walk_the_run(rand_walk, 6, "TOTPOP", cutedge_ensemble, lmaj_ensemble, dem_win_ensemble)
 
 # Histograms
 # 1. Cut edge
