@@ -64,16 +64,16 @@ def init_markov_chain(graph, initial_partition, pop_col_name, ideal_pop, steps, 
 
 
 def walk_the_run(random_walk, num_dist, cutedge_ensemble, lmaj_ensemble, dem_win_ensemble):
-    print("walking the ensemble")
+    print("Walking the ensemble")
     for part in random_walk:
         # Walk randomly
         cutedge_ensemble.append(len(part["our cut edges"]))
 
         num_maj_latino = 0
-        for i in range(num_dist):
-            l_perc = part["HISP"][i] / part["district population"][i]
-            if l_perc >= 0.5:
-                num_maj_latino = num_maj_latino + 1
+        # for i in range(num_dist):
+        #     l_perc = part["HISP"][i] / part["district population"][i]
+        #     if l_perc >= 0.5:
+        #         num_maj_latino = num_maj_latino + 1
         lmaj_ensemble.append(num_maj_latino)
         dem_win_ensemble.append(dem_win_updater(part))
 
